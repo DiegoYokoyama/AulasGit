@@ -1,28 +1,9 @@
-let numeros = [15, 8, 20];
+const numeros = [15, 3, 9];
 
-function ordemCrescente(vetor) {
-    let temp;
+function ordenarCrescente(vetor) {
 
-    // Comparação entre os números
-    if (vetor[0] > vetor[1]) {
-        temp = vetor[0];
-        vetor[0] = vetor[1];
-        vetor[1] = temp;
-    }
-
-    if (vetor[0] > vetor[2]) {
-        temp = vetor[0];
-        vetor[0] = vetor[2];
-        vetor[2] = temp;
-    }
-
-    if (vetor[1] > vetor[2]) {
-        temp = vetor[1];
-        vetor[1] = vetor[2];
-        vetor[2] = temp;
-    }
-
-    return "Números em ordem crescente: " + vetor[0] + ", " + vetor[1] + ", " + vetor[2];
+  const ordenado = [...vetor].sort((a, b) => a - b);
+  return `Os números em ordem crescente são: ${ordenado.join(", ")}`;
 }
 
-console.log(ordemCrescente(numeros));
+console.log(ordenarCrescente(numeros));
