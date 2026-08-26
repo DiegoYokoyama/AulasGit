@@ -40,6 +40,5 @@ function imprimirResultados(turmas) {
   }
 }
 
-// Execução
 ordenarAlunosPorNota(turmas);
 imprimirResultados(turmas);
