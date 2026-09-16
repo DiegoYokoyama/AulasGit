@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>presenca.html</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        li {
+            list-style: none;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #2e9e4f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #257a3e;
+        }
+
+        .presente {
+            color: green;
+            font-weight: bold;
+        }
+
+        .ausente {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>presenca.html</h1>
+
+    <ul id="lista">
+        <li><input type="checkbox" class="presenca" data-nome="João" > João</li>
+        <li><input type="checkbox" class="presenca" data-nome="Márcio" > Márcio</li>
+        <li><input type="checkbox" class="presenca" data-nome="Fabiana"> Fabiana</li>
+        <li><input type="checkbox" class="presenca" data-nome="Jorge"> Jorge</li>
+        <li><input type="checkbox" class="presenca" data-nome="Silvana"> Silvana</li>
+        <li><input type="checkbox" class="presenca" data-nome="Luiz" > Luiz</li>
+        <li><input type="checkbox" class="presenca" data-nome="Carlos" > Carlos</li>
+        <li><input type="checkbox" class="presenca" data-nome="Pablo" > Pablo</li>
+    </ul>
+
+    <button onclick="confirmarPresenca()">Confirmar Presença</button>
+
+    <h2>Resultado</h2>
+    <p><strong>Presentes:</strong> <span id="presentes"></span></p>
+    <p><strong>Ausentes:</strong> <span id="ausentes"></span></p>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
