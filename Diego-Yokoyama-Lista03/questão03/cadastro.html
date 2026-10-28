@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Cadastro de Alunos</h1>
+
+    <form id="meuFormulario">
+        <p>Nome: <input type="text" name="nome" required></p>
+        <p>E-mail: <input type="email" name="email" required></p>
+        <p>Idade: <input type="number" name="idade" min="1" max="120" required></p>
+        <p>Curso: 
+            <select name="curso" required>
+                <option value="">Selecione</option>
+                <option value="ADS">ADS</option>
+                <option value="Computação">Computação</option>
+                <option value="Engenharia">Engenharia</option>
+            </select>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>JSON:</h3>
+    <pre id="json"></pre>
+
+    <h3>Tabela de Alunos:</h3>
+    <table border="1" id="tabela">
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Idade</th>
+            <th>Curso</th>
+        </tr>
+    </table>
+
+    <script>
+        const form = document.getElementById("meuFormulario");
+
+        form.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            const dados = new FormData(form);
+            const objeto = {};
+
+            dados.forEach(function(valor, chave) {
+                objeto[chave] = valor;
+            });
+
+            document.getElementById("json").innerText = JSON.stringify(objeto, null, 2);
+
+            const tabela = document.getElementById("tabela");
+            const linha = tabela.insertRow();
+
+            linha.insertCell(0).innerText = objeto.nome;
+            linha.insertCell(1).innerText = objeto.email;
+            linha.insertCell(2).innerText = objeto.idade;
+            linha.insertCell(3).innerText = objeto.curso;
+        });
+    </script>
+
+</body>
+</html>

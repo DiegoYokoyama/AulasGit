@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Lista de Usuarios</h1>
+    <div id="cards"></div>
+    <p id="total"></p>
+
+    <script>
+        const usuario = [
+            {id: 1, name: "Leanne Graham", email: "Sincere@april.biz", address: {city: "Gwenborough"}, company: {name: "Romaguera-Crona"}},
+            {id: 2, name: "Ervin Howell", email: "shanna@melissa.tv", address: {city: "Wisokburgh"}, company: {name: "Deckow-crist"}},
+            {id: 3, name: "Clementine Bauch", email: "Nathan@yesenia", address: {city: "McKenziehaven"}, company: {name: "Romaguera-Jacobson"}},
+            {id: 4, name: "Patricia Lebsack", email: "Julianne.OConner@kory.org", address: {city: "South Elvis"}, company: {name: "Robel-Corkey"}}
+        ];
+
+        const divcards = document.getElementById("cards");
+
+        usuario.forEach(function (usuario) {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const nome = document.createElement("h3");
+            nome.textContent = usuario.name;
+
+            const email = document.createElement("p");
+            email.textContent = "E-mail: " + usuario.email;
+
+            const cidade = document.createElement("p");
+            cidade.textContent = "Cidade: " + usuario.address.city;
+
+            const empresa = document.createElement("p");
+            empresa.textContent = "Empresa: " + usuario.company.name;
+
+            card.appendChild(nome);
+            card.appendChild(email);
+            card.appendChild(cidade);
+            card.appendChild(empresa);
+
+            divcards.appendChild(card);
+        });
+
+        document.getElementById("total").textContent = "Total de Usuario: " + usuario.length;
+
+
+    
+
+    </script>
+</body>
+</html>
